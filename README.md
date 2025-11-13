@@ -358,15 +358,93 @@
             }
         }
         
-        /* 인쇄용 스타일 */
-        @media print {
-            body {
-                background: white;
-            }
-            .container {
-                box-shadow: none;
-            }
-        }
+       /* 인쇄용 스타일 */
+@media print {
+    body {
+        background: white !important;
+        padding: 0 !important;
+    }
+    
+    .container {
+        box-shadow: none !important;
+        max-width: 100% !important;
+        padding: 15px !important;  /* 20px → 15px로 줄여서 공간 확보 */
+    }
+    
+    /* 그리드 유지 */
+    .project-image-grid {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 10px !important;  /* 15px → 10px로 줄임 */
+    }
+    
+    .project-image {
+        margin: 15px 0 !important;  /* 여백 줄이기 */
+        padding: 10px !important;   /* 여백 줄이기 */
+    }
+    
+    .project-image img {
+        width: 100% !important;
+        height: 200px !important;  /* 280px → 200px로 줄임 */
+        object-fit: contain !important;
+    }
+    
+    /* GIF 크기 */
+    .project-image img[src*="gamebox.gif"] {
+        grid-column: 1 / -1 !important;
+        height: 250px !important;  /* 350px → 250px로 줄임 */
+    }
+    
+    header {
+        background: #667eea !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+        padding: 25px 15px !important;  /* 여백 줄이기 */
+        margin: -15px -15px 20px -15px !important;  /* 여백 조정 */
+    }
+    
+    header h1 {
+        font-size: 2em !important;  /* 크기 줄이기 */
+    }
+    
+    section {
+        margin-bottom: 25px !important;  /* 섹션 간 여백 줄이기 */
+    }
+    
+    .project-card {
+        margin-bottom: 20px !important;  /* 여백 줄이기 */
+        padding: 20px !important;        /* 여백 줄이기 */
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1) !important;
+    }
+    
+    .skill-category {
+        background: #667eea !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+    
+    .tech-tag {
+        background: #667eea !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+    
+    .project-link {
+        background: #667eea !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+    
+    .highlights {
+        margin-top: 10px !important;  /* 여백 줄이기 */
+        padding: 10px 15px 10px 30px !important;
+    }
+    
+    .highlights li {
+        margin-bottom: 5px !important;
+        line-height: 1.4 !important;
+    }
+}
     </style>
 </head>
 <body>
@@ -607,237 +685,4 @@
 </html>
     </style>
 </head>
-<body>
-    <div class="container">
-        <!-- 헤더 -->
-        <header>
-            <h1>주니어 개발자로서의 출발점</h1>
-            <p>건축 현장에서 개발 현장으로, 8개월의 도전</p>
-            <div class="contact-info">
-                <span>📧 <a href="mailto:johnkwon33@gmail.com">johnkwon33@gmail.com</a></span>
-                <span>📱 010-3524-3007</span>
-                <span>💻 <a href="https://github.com/johnkwon87" target="_blank">github.com/johnkwon87</a></span>
-            </div>
-        </header>
 
-        <!-- About Me -->
-        <section id="about">
-            <h2>About Me</h2>
-            <div class="about-content">
-                <p>10년 넘게 건축 현장에서 일하며 안정적인 길을 걸어왔지만, 인생의 전환점에서 개발자로서 전환을 결심했습니다.</p>
-                <p style="margin-top: 10px;">2025년 4월부터 8개월간 풀스택 개발자 과정을 이수하며 Java, Spring Boot를 중심으로 학습했고, 4개의 팀 프로젝트를 완수하며 실무 역량을 쌓았습니다.</p>
-                <p style="margin-top: 10px;">현장에서 얻은 끈기와 협업 경험을 바탕으로, 사용자에게 실제 도움이 되는 서비스를 구현하는 개발자를 목표로 하고 있습니다.</p>
-            </div>
-        </section>
-
-        <!-- 기술 스택 -->
-        <section id="skills">
-            <h2>Skills</h2>
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h3>Backend</h3>
-                    <ul>
-                        <li>Java</li>
-                        <li>Spring Boot</li>
-                        <li>Spring Data JPA</li>
-                        <li>Spring Security</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h3>Frontend</h3>
-                    <ul>
-                        <li>HTML5 / CSS3</li>
-                        <li>JavaScript</li>
-                        <li>Thymeleaf</li>
-                        <li>Bootstrap</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h3>Database</h3>
-                    <ul>
-                        <li>MySQL</li>
-                        <li>Oracle SQL</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h3>Tools & Others</h3>
-                    <ul>
-                        <li>Git / GitHub</li>
-                        <li>IntelliJ IDEA</li>
-                        <li>Python (AI/ML 기초)</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <!-- 프로젝트 -->
-        <section id="projects">
-            <h2>Projects</h2>
-
-	<!-- Game 프로젝트 -->
-            <div class="project-card">
-                <h3>🎮 Game - 멀티 게임 통합 플랫폼</h3>
-                <div class="project-meta">
-                    <span><strong>기간:</strong> 2025.08.27 ~ 2025.09.03</span>
-                    <span><strong>구분:</strong> 팀 프로젝트 (5명, 팀장)</span>
-                    <span><strong>역할:</strong> GUI 구현 / 게임 로직 개발 / 멀티스레드 설계</span>
-                </div>
-                <p class="project-description">
-                    캐릭터를 조작하여 원하는 게임 영역으로 이동하면 해당 게임이 실행되는 통합 게임 플랫폼입니다. 
-                    3가지 미니게임을 하나의 플랫폼에서 제공하며, 멀티스레드를 활용해 끊김 없는 사용자 경험을 구현했습니다.
-                </p>
-	    <!-- 이미지 추가 -->
-                <div class="project-image">
-                    <img src="https://raw.githubusercontent.com/JohnKWON87/portfolio/main/images/gamebox.gif" alt="게임 데모">
-                    <p>💡 캐릭터 이동 및 게임 실행 화면</p>
-                </div>
-
-                <div class="tech-stack">
-                    <div class="tech-tags">
-                        <span class="tech-tag">Python</span>
-                        <span class="tech-tag">Tkinter</span>
-                        <span class="tech-tag">Threading</span>
-                        <span class="tech-tag">Pillow</span>
-                    </div>
-                </div>
-                <ul class="highlights">
-                    <li><strong>멀티스레딩:</strong> threading 모듈을 활용해 GUI 프리징 문제 100% 해결</li>
-                    <li><strong>충돌 감지:</strong> Bounding Box 알고리즘으로 영역 판정 정확도 95% 이상 달성</li>
-                    <li><strong>게임 구현:</strong> 가위바위보, 끝말잇기, 마피아 게임 (단어 데이터베이스 1,000개 이상)</li>
-                    <li><strong>사용자 경험:</strong> 키보드 입력 기반 캐릭터 조작 및 실시간 위치 업데이트</li>
-                </ul>
-                <a href="https://github.com/johnkwon87/game" target="_blank" class="project-link">GitHub 보기 →</a>
-            </div>
-        
-
-            <!-- Carrot 프로젝트 -->
-            <div class="project-card">
-                <h3>🥕 Carrot - 지역 중고거래 웹 플랫폼</h3>
-                <div class="project-meta">
-                    <span><strong>기간:</strong> 2025.09.24 ~ 2025.10.01</span>
-                    <span><strong>구분:</strong> 팀 프로젝트 (5명, 팀원)</span>
-                    <span><strong>역할:</strong> 백엔드 개발 / 관리자 시스템 구현</span>
-                </div>
-                <p class="project-description">
-                    당근마켓을 벤치마킹한 중고거래 플랫폼으로, Spring Boot 학습 2주 후 1주일 만에 완성한 프로젝트입니다. 
-                    사용자 간 안전한 거래를 위한 다양한 기능과 관리자 시스템을 구현했습니다.
-                </p>
-
-                <!-- 이미지 추가 -->
-                <div class="project-image">
-                    <img src="https://raw.githubusercontent.com/JohnKWON87/portfolio/main/images/carrot1.jpg" alt="Carrot 메인">
-                    <img src="https://raw.githubusercontent.com/JohnKWON87/portfolio/main/images/carrot2.jpg" alt="Carrot 관리자">
-                    <img src="https://raw.githubusercontent.com/JohnKWON87/portfolio/main/images/carrot3.jpg" alt="Carrot 목록">
-                    <img src="https://raw.githubusercontent.com/JohnKWON87/portfolio/main/images/carrot4.jpg" alt="Carrot 상세">
-                    <p>💡 중고거래 플랫폼 주요 화면</p>
-                </div>
-
-                <div class="tech-stack">
-                    <div class="tech-tags">
-                        <span class="tech-tag">Java</span>
-                        <span class="tech-tag">Spring Boot</span>
-                        <span class="tech-tag">JPA</span>
-                        <span class="tech-tag">Spring Security</span>
-                        <span class="tech-tag">Thymeleaf</span>
-                        <span class="tech-tag">MySQL</span>
-                    </div>
-                </div>
-                <ul class="highlights">
-                    <li><strong>팀 리더십:</strong> 코딩 컨벤션 문서화, DB 설정 통일, 일일 스크럼 회의 진행</li>
-                    <li><strong>성능 개선:</strong> @EntityGraph를 활용한 Fetch Join으로 쿼리 실행 횟수 80% 감소</li>
-                    <li><strong>관리자 기능:</strong> 회원/상품 관리, 부적절 콘텐츠 블라인드 처리, 활동 로그 관리</li>
-                    <li><strong>주요 기능:</strong> 상품 등록/검색, 관심상품, 구매희망, 게시판, 동적 메뉴 관리</li>
-                    <li><strong>협업:</strong> AI 도구 활용 가이드라인 수립 및 코드 리뷰 문화 정착</li>
-                </ul>
-                <a href="https://github.com/johnkwon87/carrot" target="_blank" class="project-link">GitHub 보기 →</a>
-            </div>
-
-	<!-- Foods 프로젝트 (개인) -->
-            <div class="project-card">
-                <h3>🍽️ Foods - 맛집 커뮤니티 웹사이트</h3>
-                <div class="project-meta">
-                    <span><strong>기간:</strong> 2025.10 ~ 2025.11</span>
-                    <span><strong>구분:</strong> 개인 프로젝트</span>
-                </div>
-                <p class="project-description">
-                    사용자들이 맛집 정보를 등록하고 공유할 수 있는 커뮤니티 플랫폼입니다. 
-                    지역별·카테고리별 검색 기능과 별점 기반 리뷰 시스템을 구현했으며, 
-                    카카오맵 API를 연동하여 실시간 위치 정보를 제공합니다.
-                </p>
-                    <div class="project-image">
-                    <img src="https://raw.githubusercontent.com/JohnKWON87/portfolio/main/images/foods1.jpg" alt="Foods 메인">
-                    <img src="https://raw.githubusercontent.com/JohnKWON87/portfolio/main/images/foods2.jpg" alt="Foods 상세">
-                    <img src="https://raw.githubusercontent.com/JohnKWON87/portfolio/main/images/foods3.jpg" alt="Foods KaKaO API">
-                    <p>💡 맛집 커뮤니티 주요 화면</p>
-                </div>
-                <div class="tech-stack">
-                    <div class="tech-tags">
-                        <span class="tech-tag">Java</span>
-                        <span class="tech-tag">Spring Boot</span>
-                        <span class="tech-tag">JPA</span>
-                        <span class="tech-tag">Spring Security</span>
-                        <span class="tech-tag">Thymeleaf</span>
-                        <span class="tech-tag">MySQL</span>
-                        <span class="tech-tag">Kakao Map API</span>
-                    </div>
-                </div>
-                <ul class="highlights">
-                    <li><strong>성능 최적화:</strong> EntityGraph를 활용한 N+1 문제 해결로 쿼리 실행 횟수 90% 감소 (100회 → 10회)</li>
-                    <li><strong>보안:</strong> Spring Security를 활용한 회원 인증/인가 시스템 구현 (BCrypt 암호화)</li>
-                    <li><strong>사용자 경험:</strong> 이미지 리사이징으로 평균 로딩 속도 70% 개선</li>
-                    <li><strong>주요 기능:</strong> 회원가입/로그인, 맛집 등록/수정/삭제, 별점 리뷰, 페이징 처리</li>
-                </ul>
-                <a href="https://github.com/johnkwon87/foods" target="_blank" class="project-link">GitHub 보기 →</a>
-            </div>
-
-            <!-- Saju 프로젝트 -->
-            <div class="project-card">
-                <h3>🔮 Saju - AI 사주 분석 플랫폼</h3>
-                <div class="project-meta">
-                    <span><strong>기간:</strong> 2025.11.10 ~ 2025.11.13</span>
-                    <span><strong>구분:</strong> 팀 프로젝트 (3명, 팀원)</span>
-                    <span><strong>역할:</strong> 데이터 수집/전처리 / 머신러닝 모델 구축 / API 통합</span>
-                </div>
-                <p class="project-description">
-                    전통 사주팔자 계산과 머신러닝 모델, Google Gemini API를 결합하여 
-                    개인 맞춤형 운세를 제공하는 AI 시스템입니다. 
-                    웹 스크래핑으로 데이터를 수집하고 3가지 알고리즘 앙상블로 예측 정확도를 향상시켰습니다.
-                </p>
-	        <div class="project-image">
-                    <img src="https://raw.githubusercontent.com/JohnKWON87/portfolio/main/images/saju1.jpg" alt="Saju 입력">
-                    <img src="https://raw.githubusercontent.com/JohnKWON87/portfolio/main/images/saju2.jpg" alt="Saju 결과">
-                    <p>💡 AI 사주 분석 화면</p>
-                </div>
-                <div class="tech-stack">
-                    <div class="tech-tags">
-                        <span class="tech-tag">Python</span>
-                        <span class="tech-tag">scikit-learn</span>
-                        <span class="tech-tag">pandas</span>
-                        <span class="tech-tag">Gemini API</span>
-                        <span class="tech-tag">BeautifulSoup</span>
-                        <span class="tech-tag">Selenium</span>
-                    </div>
-                </div>
-                <ul class="highlights">
-                    <li><strong>머신러닝:</strong> Random Forest, Decision Tree, KNN 앙상블로 85% 정확도 달성</li>
-                    <li><strong>성능 최적화:</strong> 프롬프트 최적화 및 비동기 처리로 API 응답 시간 70% 단축 (5초 → 1.5초)</li>
-                    <li><strong>데이터 처리:</strong> 웹 스크래핑, 결측치 처리, Label Encoding, 데이터 정규화</li>
-                    <li><strong>AI 통합:</strong> 머신러닝 예측 결과를 Gemini API로 자연어 해석 생성</li>
-                </ul>
-                <a href="https://github.com/johnkwon87/saju_project" target="_blank" class="project-link">GitHub 보기 →</a>
-            </div>
-	</section>
-
-            
-        <!-- 푸터 -->
-        <footer style="text-align: center; padding: 30px 0; color: #888; border-top: 1px solid #ddd; margin-top: 50px;">
-            <div class="education-box">
-                <h3>🎓 경북산업 직업 전문학교</h3>
-                <p><strong>K-Digital Training AI기반 빅데이터 플랫폼 풀스택 개발자 과정 2025.04 ~ 2025.11</strong></p>
-            </div>
-            <p>© 2025 Kwon Hyukmin. All rights reserved.</p>
-            
-        </footer>
-    </div>
-</body>
-</html>
