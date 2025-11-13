@@ -6,3 +6,4 @@
 
 [![Download PDF](https://img.shields.io/badge/Download-PDF-red?style=for-the-badge&logo=adobeacrobatreader)](./portfolio.pdf)
 
+또는 [여기를 클릭하여 PDF 다운로드](./portfolio.pdf)
