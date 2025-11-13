@@ -1,2 +1,8 @@
 2025년 풀스택 개발자 양성과정 8개월의 과정과 결과
 
+## 📄 포트폴리오 다운로드
+
+아래 링크에서 PDF 포트폴리오를 다운로드하거나 온라인으로 확인할 수 있습니다.
+
+[![Download PDF](https://img.shields.io/badge/Download-PDF-red?style=for-the-badge&logo=adobeacrobatreader)](./portfolio.pdf)
+
