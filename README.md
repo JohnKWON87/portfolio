@@ -4,6 +4,6 @@
 
 아래 링크에서 PDF 포트폴리오를 다운로드하거나 온라인으로 확인할 수 있습니다.
 
-[![Download PDF](https://img.shields.io/badge/Download-PDF-red?style=for-the-badge&logo=adobeacrobatreader)](./portfolio.pdf)
+[![Download PDF](https://img.shields.io/badge/Download-PDF-red?style=for-the-badge&logo=adobeacrobatreader)](./Final권혁민%20-%20포트폴리오.pdf)
 
-또는 [여기를 클릭하여 PDF 다운로드](./portfolio.pdf)
+또는 [여기를 클릭하여 PDF 다운로드](./Final권혁민%20-%20포트폴리오.pdf)
